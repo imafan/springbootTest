@@ -32,9 +32,9 @@ public class UserControllerTests {
 
     @Before
     public void setUp() throws Exception {
-        mvc = MockMvcBuilders.standaloneSetup(new UserController()).build();
+//        mvc = MockMvcBuilders.standaloneSetup(new UserController()).build();
 
-//        mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+        mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
 
     @Test
