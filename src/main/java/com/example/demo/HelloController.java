@@ -20,16 +20,11 @@ public class HelloController {
     }
 
     @RequestMapping("/hello")
-    public String hello(Map<String,Object> map){
+    public String hello(Map<String,Object> map) throws Exception{
         map.put("name", "[Angel -- 守护天使]");
+
         return "hello";
     }
 
-//    @RequestMapping(value="/users/", method= RequestMethod.GET)
-//    public List<User> getUserList() {
-//        // 处理"/users/"的GET请求，用来获取用户列表
-//        // 还可以通过@RequestParam从页面中传递参数来进行查询条件或者翻页信息的传递
-//        List<User> r = new ArrayList<User>(UserController.users.values());
-//        return r;
-//    }
+
 }
