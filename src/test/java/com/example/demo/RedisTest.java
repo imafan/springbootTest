@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.entity.User;
+import org.assertj.core.util.Lists;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
 
 /**
  * Created by imafan on 2017-09-07.
@@ -17,7 +20,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class RedisTest {
 
     @Autowired
-    private RedisTemplate<String,User> redisTemplate;
+    private RedisTemplate<String,Object> redisTemplate;
 
 
     @Test
@@ -25,9 +28,12 @@ public class RedisTest {
         User user = new User();
         user.setNickName("test");
 
-        redisTemplate.opsForValue().set("user", user);
+        List<User> test = Lists.newArrayList();
+        test.add(user);
 
-        Assert.assertEquals("test", redisTemplate.opsForValue().get("user").getNickName());
+        redisTemplate.opsForValue().set("user", test);
+
+        Assert.assertEquals("test", ((List<User>) redisTemplate.opsForValue().get("user")).get(0).getNickName());
 
     }
 }
