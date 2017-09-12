@@ -3,7 +3,10 @@ package com.example.controller;
 import com.example.model.City;
 import com.example.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  * Created by imafan on 2017-09-08.
@@ -21,8 +24,14 @@ public class CityRestController {
     }
 
     @RequestMapping(value = "/api/city", method = RequestMethod.POST)
-    public void createCity(@RequestBody City city) {
-        cityService.saveCity(city);
+    public String createCity(@Valid City city,BindingResult bindingResult) {
+
+        if(bindingResult.hasErrors()){
+            return bindingResult.getFieldError().getDefaultMessage();
+        }else{
+            cityService.saveCity(city);
+            return "添加成功！";
+        }
     }
 
     @RequestMapping(value = "/api/city", method = RequestMethod.PUT)

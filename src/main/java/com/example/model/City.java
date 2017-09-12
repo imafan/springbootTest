@@ -1,10 +1,13 @@
 package com.example.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import java.io.Serializable;
 
 /**
  * Created by imafan on 2017-09-08.
  */
+
 public class City implements Serializable {
 
     /**
@@ -20,6 +23,7 @@ public class City implements Serializable {
     /**
      * 城市名称
      */
+    @NotEmpty(message = "姓名不能为空")
     private String cityName;
 
     /**
