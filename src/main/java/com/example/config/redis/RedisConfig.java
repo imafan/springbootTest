@@ -1,15 +1,18 @@
-package com.example.redis;
+package com.example.config.redis;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 
 /**
  * Created by imafan on 2017-09-07.
  */
-//@Configuration
+@Configuration
+@EnableRedisHttpSession
 public class RedisConfig {
 
     @Bean
