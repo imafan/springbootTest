@@ -1,4 +1,4 @@
-package com.example.mapper;
+package com.example.mapper.master;
 
 import com.example.entity.Role;
 import org.apache.ibatis.annotations.Mapper;

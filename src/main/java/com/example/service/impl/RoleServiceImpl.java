@@ -1,7 +1,7 @@
 package com.example.service.impl;
 
 import com.example.entity.Role;
-import com.example.mapper.RoleMapper;
+import com.example.mapper.master.RoleMapper;
 import com.example.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 

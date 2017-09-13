@@ -1,4 +1,4 @@
-package com.example.rabbitmq.listener;
+package com.example.config.rabbitmq.listener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

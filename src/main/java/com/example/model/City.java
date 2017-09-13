@@ -1,8 +1,10 @@
 package com.example.model;
 
+import com.example.entity.Area;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by imafan on 2017-09-08.
@@ -31,6 +33,7 @@ public class City implements Serializable {
      */
     private String description;
 
+    private List<Area> area;
 
     public Long getId() {
         return id;
@@ -62,6 +65,14 @@ public class City implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<Area> getArea() {
+        return area;
+    }
+
+    public void setArea(List<Area> area) {
+        this.area = area;
     }
 
     public String toString() {

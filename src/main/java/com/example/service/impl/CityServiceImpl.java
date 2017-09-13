@@ -1,6 +1,7 @@
 package com.example.service.impl;
 
-import com.example.mapper.CityMapper;
+import com.example.mapper.cluster.AreaMapper;
+import com.example.mapper.master.CityMapper;
 import com.example.model.City;
 import com.example.service.CityService;
 import org.slf4j.Logger;
@@ -22,6 +23,9 @@ public class CityServiceImpl implements CityService {
 
     @Autowired
     private CityMapper cityMapper;
+
+    @Autowired
+    private AreaMapper areaMapper;
 
     @Autowired
     private RedisTemplate redisTemplate;
@@ -47,6 +51,8 @@ public class CityServiceImpl implements CityService {
 
         // 从 DB 中获取城市信息
         City city = cityMapper.findById(id);
+
+        city.setArea(areaMapper.findAll());
 
         // 插入缓存
         operations.set(key, city, 100, TimeUnit.SECONDS);

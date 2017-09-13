@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.example.entity.User;
 import com.example.enums.UserSexEnum;
+import com.example.mapper.master.UserMapper;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,7 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
-import com.example.mapper.UserMapper;
 
 /**
  * Created by imafan on 2017/9/3 0003.

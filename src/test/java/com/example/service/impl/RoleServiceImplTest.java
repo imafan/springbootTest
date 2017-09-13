@@ -1,7 +1,7 @@
 package com.example.service.impl;
 
 import com.example.entity.Role;
-import com.example.mapper.RoleMapper;
+import com.example.mapper.master.RoleMapper;
 import junit.framework.TestCase;
 import org.junit.Test;
 import org.junit.runner.RunWith;

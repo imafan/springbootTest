@@ -1,3 +1,5 @@
+# 主数据库表
+
 /*Table structure for table `t_permission` */
 
 DROP TABLE IF EXISTS `t_permission`;
@@ -54,3 +56,23 @@ CREATE TABLE `t_user_role` (
 /*Data for the table `t_user_role` */
 
 insert  into `t_user_role`(`user_id`,`role_id`) values (1,1),(1,3),(2,2),(2,3),(3,3);
+
+
+DROP TABLE IF EXISTS `city`;
+CREATE TABLE `city` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '城市编号',
+  `province_id` int(10) unsigned NOT NULL COMMENT '省份编号',
+  `city_name` varchar(25) DEFAULT NULL COMMENT '城市名称',
+  `description` varchar(25) DEFAULT NULL COMMENT '描述',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+
+
+# 从数据库表
+CREATE TABLE `t_area` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `description` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;

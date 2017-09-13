@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.rabbitmq.Send;
+import com.example.config.rabbitmq.Send;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
