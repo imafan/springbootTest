@@ -1,4 +1,4 @@
-package com.example.rabbitmq;
+package com.example.config.rabbitmq;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.support.CorrelationData;
