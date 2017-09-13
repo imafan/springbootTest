@@ -22,3 +22,9 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+.mvn/
+log/
+logs/
+
+*.cmd
