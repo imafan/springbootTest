@@ -23,7 +23,7 @@
         WHERE id = #{id}
     </select>
 
-    <insert id="insert" parameterType="com.example.entity.Role" >
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.entity.Role" >
         INSERT INTO
         t_role
         (rolename)

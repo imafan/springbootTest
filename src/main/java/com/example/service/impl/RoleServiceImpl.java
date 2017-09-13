@@ -21,22 +21,22 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public Long update(Role role) {
-        return null;
+    public void update(Role role) {
+        roleMapper.update(role);
     }
 
     @Override
     public void delete(Long id) {
-
+        roleMapper.delete(id);
     }
 
     @Override
     public List<Role> findAll() {
-        return null;
+        return roleMapper.getAll();
     }
 
     @Override
     public Role getById(Long id) {
-        return null;
+        return roleMapper.getOne(id);
     }
 }

@@ -15,7 +15,7 @@ public interface RoleMapper {
 
     Role getOne(Long id);
 
-    void insert(Role user);
+    Long insert(Role user);
 
     void update(Role user);
 
